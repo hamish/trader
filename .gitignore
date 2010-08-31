@@ -1,0 +1,9 @@
+*.pyc
+.project
+.pydevproject
+*~
+app/distlib
+bin/
+.settings
+.installed.cfg
+etc/

@@ -11,7 +11,6 @@ from tipfy.ext.jinja2 import Jinja2Mixin
 from tipfy.ext.session import AllSessionMixins, SessionMiddleware
 from tipfy.ext.wtforms import Form, fields, validators
 
-
 REQUIRED = validators.required()
 
 class LoginForm(Form):

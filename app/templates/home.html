@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <p>A simple trading in space game. 
+     <a href="{{ url_for('trader') }}">Play Here</a>.</p>
+     {{current_user}}
+{% endblock %}
+

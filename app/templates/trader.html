@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+        You are at {{allPlanets[player.getLocation() ] }}.
+        You have ${{player.getMoney()}}.
+        You have {{player.getNumProducts()}} items in the hold.
+		<hr>
+		{% for product in allProducts %}
+		You have {{player.getProducts()[loop.index0]}} of {{product}} in your hold. 
+		Price: {{prices[loop.index0][player.getLocation()]}}
+		
+		{% if player.money > prices[loop.index0][player.getLocation()] %}
+			{% if player.getNumProducts() < player.getHoldSize() %}
+				<a href="/buyorsell?product={{loop.index0}}&action=buy">Buy</a>
+			{% endif %}
+		{% endif %}
+		
+		{% if player.getProducts()[loop.index0] >0 %}
+		<a href="/buyorsell?product={{loop.index0}}&action=sell">Sell</a>
+		{% endif %}
+		<br>
+		{% endfor %}        		        
+		<hr>
+		{% for planet in allPlanets %}
+		{{planet}} <a href="/travel?planet={{loop.index0}}">Go</a><br>
+		{% endfor %}    
+{% endblock %}
